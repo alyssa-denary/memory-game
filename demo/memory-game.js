@@ -70,3 +70,22 @@ function flipCard(card) {
   guess.push(card);
 }
 
+/** Flip a card face-down. */
+
+function unFlipCard(card) {
+  // remove classname flipped
+  // remove background color
+  // clear guess
+}
+
+/** Handle clicking on a card: this could be first-card or second-card. */
+
+function handleCardClick(e) {
+  if (e.target.classList.contains("flipped")) return;
+  if (guess.length === 0) {
+    flipCard(e.target);
+  } else if (guess.length === 1) {
+    flipCard(e.target);
+    setTimeout(unFlipCard, FOUND_MATCH_WAIT_MSECS);
+  }
+}
