@@ -5,6 +5,7 @@
 @import "base/_typography.css";
 
 @import "components/_card.css";
+@import "components/_start-button.css";
 
 @import "layout/_game.css";
 @import "layout/_landing-page.css";
