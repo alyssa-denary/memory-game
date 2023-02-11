@@ -1,0 +1,22 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "manage packages for memory game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alyssa-denary/memory-game.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "Alyssa Denary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alyssa-denary/memory-game/issues"
+  },
+  "homepage": "https://github.com/alyssa-denary/memory-game#readme"
+}
