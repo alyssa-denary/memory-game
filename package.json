@@ -4,7 +4,7 @@
   "description": "manage packages for memory game",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postcss:watch": "postcss src/styles.css --dir public --watch"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,16 @@
   "bugs": {
     "url": "https://github.com/alyssa-denary/memory-game/issues"
   },
-  "homepage": "https://github.com/alyssa-denary/memory-game#readme"
+  "homepage": "https://github.com/alyssa-denary/memory-game#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.14",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-custom-media": "^9.1.2",
+    "postcss-import": "^15.1.0",
+    "postcss-media-minmax": "^5.0.0",
+    "postcss-nested": "^6.0.0",
+    "postcss-preset-env": "^8.0.1"
+  }
 }
