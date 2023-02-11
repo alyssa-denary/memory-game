@@ -15,17 +15,18 @@ body {
   min-height: 100vh;
 }
 
+.card {
+  border: 0.1rem solid black;
+  width: 10rem;
+  height: 12rem;
+}
+
 #game {
   width: 100%;
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  grid-gap: 2rem;
   gap: 2rem;
-}
-
-.card {
-  border: 0.1rem solid black;
-  width: 10rem;
-  height: 12rem;
 }
