@@ -20,6 +20,8 @@ const colors = shuffle(COLORS);
 
 createCards(colors);
 
+const guess = [];
+
 /** Shuffle array items in-place and return shuffled array. */
 
 function shuffle(items) {
@@ -49,24 +51,9 @@ function createCards(colors) {
   const gameBoard = document.getElementById("game");
 
   for (let color of colors) {
-    // missing code here ...
+    const card = document.createElement("section");
+    card.className = `${color} card`;
+    card.addEventListener("click", handleCardClick);
+    gameBoard.appendChild(card);
   }
-}
-
-/** Flip a card face-up. */
-
-function flipCard(card) {
-  // ... you need to write this ...
-}
-
-/** Flip a card face-down. */
-
-function unFlipCard(card) {
-  // ... you need to write this ...
-}
-
-/** Handle clicking on a card: this could be first-card or second-card. */
-
-function handleCardClick(evt) {
-  // ... you need to write this ...
 }
