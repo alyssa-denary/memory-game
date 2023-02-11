@@ -5,3 +5,8 @@
   align-items: center;
   margin: 2rem;
 }
+
+.start-button {
+  font-size: 3rem;
+  color: var(--white);
+}
