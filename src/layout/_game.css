@@ -4,5 +4,9 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 4rem;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
 }
