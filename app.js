@@ -84,10 +84,16 @@ function unFlipCards() {
 
 function handleCardClick(e) {
   if (e.target.classList.contains("flipped")) return;
-  if (guess.length === 0) {
+  if (guess.length <= 1) {
     flipCard(e.target);
-  } else if (guess.length === 1) {
-    flipCard(e.target);
+  }
+  if (guess.length === 2 && isMatch(guess)) {
+    guess = [];
+  } else {
     setTimeout(unFlipCards, FOUND_MATCH_WAIT_MSECS);
   }
+}
+
+function isMatch(guess) {
+  return guess[0].style.backgroundColor === guess[1].style.backgroundColor;
 }
