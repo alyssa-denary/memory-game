@@ -20,8 +20,6 @@ const colors = shuffle(COLORS);
 
 createCards(colors);
 
-const guess = [];
-
 /** Shuffle array items in-place and return shuffled array. */
 
 function shuffle(items) {
@@ -51,41 +49,24 @@ function createCards(colors) {
   const gameBoard = document.getElementById("game");
 
   for (let color of colors) {
-    const card = document.createElement("section");
-    card.className = `${color} card`;
-    card.addEventListener("click", handleCardClick);
-    gameBoard.appendChild(card);
+    // missing code here ...
   }
 }
+
 /** Flip a card face-up. */
 
 function flipCard(card) {
-  const classArr = card.className.split(" ");
-  for (const name of classArr) {
-    if (name !== "card" && name !== "flipped") {
-      card.style.backgroundColor = name;
-    }
-  }
-  card.classList.add("flipped");
-  guess.push(card);
+  // ... you need to write this ...
 }
 
 /** Flip a card face-down. */
 
 function unFlipCard(card) {
-  // remove classname flipped
-  // remove background color
-  // clear guess
+  // ... you need to write this ...
 }
 
 /** Handle clicking on a card: this could be first-card or second-card. */
 
-function handleCardClick(e) {
-  if (e.target.classList.contains("flipped")) return;
-  if (guess.length === 0) {
-    flipCard(e.target);
-  } else if (guess.length === 1) {
-    flipCard(e.target);
-    setTimeout(unFlipCard, FOUND_MATCH_WAIT_MSECS);
-  }
+function handleCardClick(evt) {
+  // ... you need to write this ...
 }
