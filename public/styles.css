@@ -33,9 +33,19 @@ body {
 }
 
 .start-button {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 3rem;
   color: rgb(250, 250, 250);
   color: var(--white);
+}
+
+.best-score {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 3rem;
+  color: var(--black);
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
 }
 
 .card {
