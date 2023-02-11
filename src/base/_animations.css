@@ -1,3 +1,7 @@
 .start-button:hover {
   transform: translateY(-0.5rem);
 }
+
+.start-button:active {
+  transform: translateY(0rem);
+}
