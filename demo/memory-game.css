@@ -1,9 +1,33 @@
-/* you can add to or change this. */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* font size 10px */
+}
+
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+}
 
 #game div {
   border: 1px solid black;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  min-height: 90vh;
   margin: 20px;
-  display: inline-block;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.card {
+  border: 2px solid black;
+  width: 5rem;
+  height: 10rem;
+  display: flex;
 }

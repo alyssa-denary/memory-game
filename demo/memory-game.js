@@ -57,3 +57,16 @@ function createCards(colors) {
     gameBoard.appendChild(card);
   }
 }
+/** Flip a card face-up. */
+
+function flipCard(card) {
+  const classArr = card.className.split(" ");
+  for (const name of classArr) {
+    if (name !== "card" && name !== "flipped") {
+      card.style.backgroundColor = name;
+    }
+  }
+  card.classList.add("flipped");
+  guess.push(card);
+}
+
