@@ -1,5 +1,6 @@
 @import "abstracts/_variables.css";
 
+@import "base/_animations.css";
 @import "base/_base.css";
 @import "base/_typography.css";
 
