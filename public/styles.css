@@ -47,6 +47,7 @@ body {
 .start-button {
   background-color: rgb(33, 45, 175);
   background-color: var(--blue);
+  margin-top: -5rem;
   padding: 2rem 4rem;
   border: 0.1rem solid var(--black);
 }

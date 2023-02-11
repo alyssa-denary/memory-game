@@ -1,7 +1,6 @@
 .start-button {
   background-color: var(--blue);
+  margin-top: -5rem;
   padding: 2rem 4rem;
   border: 0.1rem solid var(--black);
 }
-
-
