@@ -89,7 +89,7 @@ function handleCardClick(e) {
   }
   if (guess.length === 2 && isMatch(guess)) {
     guess = [];
-  } else {
+  } else if (guess.length === 2) {
     setTimeout(unFlipCards, FOUND_MATCH_WAIT_MSECS);
   }
 }
