@@ -6,7 +6,7 @@
   margin: 2rem;
 }
 
-.start-button {
+#start-button {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 3rem;
   color: var(--white);
