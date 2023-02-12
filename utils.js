@@ -25,20 +25,22 @@ function shuffle(items) {
  * - a click event listener for each card to handleCardClick
  */
 
-function createCards(colors) {
+function createCards(game) {
   const gameBoard = document.getElementById("game");
 
-  for (let color of colors) {
-    const card = document.createElement("section");
-    card.className = `${color} card`;
-    card.addEventListener("click", handleCardClick);
-    gameBoard.appendChild(card);
+  for (let card of game.deck) {
+    const cardEl = document.createElement("section");
+    cardEl.className = `${card} card`;
+    cardEl.addEventListener("click", (e) => {
+      handleCardClick(e, game);
+    });
+    gameBoard.appendChild(cardEl);
   }
 }
 
 /** Flip a card face-up. */
 
-function flipCard(card) {
+function flipCard(card, guess) {
   const classArr = card.className.split(" ");
   for (const name of classArr) {
     if (name !== "card" && name !== "flipped") {
@@ -51,28 +53,38 @@ function flipCard(card) {
 
 /** Flip a card face-down. */
 
-function unFlipCards() {
-  for (const card of guess) {
+function unFlipCards(game) {
+  for (const card of game.guess) {
     card.classList.remove("flipped");
     card.style.backgroundColor = "";
   }
-  guess = [];
+  game.guess = [];
 }
 
 /** Handle clicking on a card: this could be first-card or second-card. */
 
-function handleCardClick(e) {
+function handleCardClick(e, game) {
   if (e.target.classList.contains("flipped")) return;
-  if (guess.length <= 1) {
-    flipCard(e.target);
+  if (game.guess.length <= 1) {
+    flipCard(e.target, game.guess);
   }
-  if (guess.length === 2 && isMatch(guess)) {
-    guess = [];
-  } else if (guess.length === 2) {
-    setTimeout(unFlipCards, FOUND_MATCH_WAIT_MSECS);
+  if (game.guess.length === 2 && isMatch(game.guess)) {
+    game.guess = [];
+  } else if (game.guess.length === 2) {
+    setTimeout(unFlipCards, game.cardDisplayTime, game);
   }
 }
 
 function isMatch(guess) {
   return guess[0].style.backgroundColor === guess[1].style.backgroundColor;
+}
+
+function startGame(cards, mSecs) {
+  const deck = shuffle(cards);
+  const game = {
+    deck: deck,
+    guess: [],
+    cardDisplayTime: mSecs,
+  };
+  createCards(game);
 }
