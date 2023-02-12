@@ -16,10 +16,9 @@ const COLORS = [
   "purple",
 ];
 
-const colors = shuffle(COLORS);
+// startGame(COLORS, FOUND_MATCH_WAIT_MSECS);
 
-createCards(colors);
-
-let guess = [];
-
-
+// add event listener to start button
+document
+  .getElementById("start-button")
+  .addEventListener("click", (e) => startGame(COLORS, FOUND_MATCH_WAIT_MSECS));
