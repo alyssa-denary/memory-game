@@ -85,6 +85,7 @@ function startGame(cards, mSecs) {
     deck: deck,
     guess: [],
     cardDisplayTime: mSecs,
+    playStatus: "playing",
   };
   createCards(game);
 }
