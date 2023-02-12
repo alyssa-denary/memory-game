@@ -1,10 +1,13 @@
-.landing-page {
+#landing-page {
   height: 90vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  background-color: var(--white);
+  z-index: 1;
 }
 
 .best-score {
