@@ -14,7 +14,8 @@ const COLORS = [
   "purple",
 ];
 
-// add event listener to start button
+document.getElementById("best-score").textContent = findBestScore();
+
 document.getElementById("start-button").addEventListener("click", (e) => {
   startGame(COLORS, FOUND_MATCH_WAIT_MSECS);
   document.getElementById("landing-page").style.visibility = "hidden";
