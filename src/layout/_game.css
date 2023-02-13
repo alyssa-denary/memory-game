@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-#score {
+#current-score {
   display: flex;
   justify-content: center;
   align-items: center;
