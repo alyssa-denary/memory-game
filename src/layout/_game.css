@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.score {
+#score {
   width: 10rem;
   height: 12rem;
   grid-row: mid-start / mid-end;
