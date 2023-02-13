@@ -137,6 +137,6 @@ body {
   z-index: 1;
 }
 
-.best-score {
+#best-score {
   margin-bottom: 10rem;
 }
