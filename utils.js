@@ -117,7 +117,7 @@ function endGame(score) {
   for (let card of cards) {
     document.getElementById("game").removeChild(card);
   }
-  document.getElementById("your-score").textContent = score;
+  document.getElementById("your-score").textContent = `Your score: ${score}`;
   document.getElementById("best-score").textContent = findBestScore(score);
   document.getElementById("start-button").textContent = "Restart Game";
   document.getElementById("landing-page").style.visibility = "visible";
