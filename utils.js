@@ -112,6 +112,7 @@ function findBestScore(gameScore) {
 }
 
 function endGame(score) {
+  document.getElementById("current-score").textContent = 0;
   const cards = document.querySelectorAll(".card");
   for (let card of cards) {
     document.getElementById("game").removeChild(card);
