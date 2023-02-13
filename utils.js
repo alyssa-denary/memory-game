@@ -1,7 +1,5 @@
 "use strict";
 
-// Add DoubleDeck function to make pairs of a unique deck
-
 /** Shuffle array items in-place and return shuffled array. */
 function shuffle(items) {
   // This algorithm does a "perfect shuffle", where there won't be any
@@ -98,6 +96,10 @@ function checkStatus(game) {
 }
 
 function endGame() {
+  const cards = document.querySelectorAll(".card");
+  for (let card of cards) {
+    document.getElementById("game").removeChild(card);
+  }
   document.getElementById("start-button").textContent = "Restart Game";
   document.getElementById("landing-page").style.visibility = "visible";
 }
