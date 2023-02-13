@@ -10,6 +10,9 @@
 }
 
 #score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 10rem;
   height: 12rem;
   grid-row: mid-start / mid-end;
