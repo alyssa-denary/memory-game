@@ -85,7 +85,7 @@ function isMatch(game) {
 }
 
 function displayScore(score) {
-  document.getElementById("score").textContent = score;
+  document.getElementById("current-score").textContent = score;
 }
 
 function checkStatus(game) {
