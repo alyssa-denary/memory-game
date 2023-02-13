@@ -91,15 +91,16 @@ function displayScore(score) {
 function checkStatus(game) {
   if (game.numMatches === game.deck.length / 2) {
     game.playStatus = "finished";
-    endGame();
+    endGame(game.numGuesses);
   }
 }
 
-function endGame() {
+function endGame(score) {
   const cards = document.querySelectorAll(".card");
   for (let card of cards) {
     document.getElementById("game").removeChild(card);
   }
+  document.getElementById("your-score").textContent = `Your score: ${score}`;
   document.getElementById("start-button").textContent = "Restart Game";
   document.getElementById("landing-page").style.visibility = "visible";
 }
