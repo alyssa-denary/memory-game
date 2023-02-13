@@ -99,6 +99,18 @@ function checkStatus(game) {
   }
 }
 
+function findBestScore(game) {
+  const bestScore = retrieve("bestScore");
+  if (game.numGuesses < bestScore) {
+    store("bestScore", game.numGuesses);
+    return game.numGuesses;
+  } else if (bestScore === Infinity) {
+    return "n/a";
+  } else {
+    return bestScore;
+  }
+}
+
 function endGame(score) {
   const cards = document.querySelectorAll(".card");
   for (let card of cards) {
@@ -121,4 +133,13 @@ function startGame(cards, mSecs) {
     isListening: true,
   };
   createCards(game);
+}
+
+function store(key, obj) {
+  localStorage.setItem(`${key}`, JSON.stringify(obj));
+}
+
+function retrieve(key) {
+  const objJSON = localStorage.getItem(`${key}`);
+  return objJSON !== null ? JSON.parse(objJSON) : Infinity;
 }
