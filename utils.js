@@ -69,6 +69,8 @@ function handleCardClick(e, game) {
     flipCard(e.target, game.guess);
   }
   if (game.guess.length === 2 && isMatch(game.guess)) {
+    game.numMatches++;
+    checkStatus(game);
     game.guess = [];
   } else if (game.guess.length === 2) {
     setTimeout(unFlipCards, game.cardDisplayTime, game);
@@ -79,6 +81,18 @@ function isMatch(guess) {
   return guess[0].style.backgroundColor === guess[1].style.backgroundColor;
 }
 
+function checkStatus(game) {
+  if (game.numMatches === game.deck.length / 2) {
+    game.playStatus = "finished";
+    endGame();
+  }
+}
+
+function endGame() {
+  document.getElementById("start-button").textContent = "Restart Game";
+  document.getElementById("landing-page").style.visibility = "visible";
+}
+
 function startGame(cards, mSecs) {
   const deck = shuffle(cards);
   const game = {
@@ -86,6 +100,7 @@ function startGame(cards, mSecs) {
     guess: [],
     cardDisplayTime: mSecs,
     playStatus: "playing",
+    numMatches: 0,
   };
   createCards(game);
 }
