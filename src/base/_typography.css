@@ -1,9 +1,5 @@
 .heading {
   font-size: 3.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem;
 }
 
 #start-button {
