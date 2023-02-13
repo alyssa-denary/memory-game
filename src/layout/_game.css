@@ -2,11 +2,31 @@
   width: 100%;
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 4rem;
   justify-content: center;
   align-content: center;
   justify-items: center;
   align-items: center;
+}
+
+.score {
+  width: 10rem;
+  height: 12rem;
+  grid-row: mid-start / mid-end;
+  grid-column: mid-start / mid-end;
+}
+
+.easy {
+  grid-template-columns: [first] 1fr [mid-start] 1fr [mid-end end] 1fr;
+  grid-template-rows: [first] 1fr [mid-start] 1fr [mid-end end] 1fr;
+}
+
+.medium {
+  grid-template-columns: [first] 1fr [second] 1fr [mid-start] 1fr [mid-end] 1fr [end] 1fr;
+  grid-template-rows: [first] 1fr [second] 1fr [mid-start] 1fr [mid-end] 1fr [end] 1fr;
+}
+
+.hard {
+  grid-template-columns: [first] 1fr [second] 1fr [third] 1fr[mid-start] 1fr [mid-end] 1fr [second-last] 1fr [end] 1fr;
+  grid-template-rows: [first] 1fr [second] 1fr [third] 1fr[mid-start] 1fr [mid-end] 1fr [second-last] 1fr [end] 1fr;
 }
