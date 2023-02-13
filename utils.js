@@ -1,7 +1,8 @@
 "use strict";
 
-/** Shuffle array items in-place and return shuffled array. */
+// Add DoubleDeck function to make pairs of a unique deck
 
+/** Shuffle array items in-place and return shuffled array. */
 function shuffle(items) {
   // This algorithm does a "perfect shuffle", where there won't be any
   // statistical bias in the shuffle (many naive attempts to shuffle end up not
@@ -68,7 +69,7 @@ function handleCardClick(e, game) {
   if (game.guess.length <= 1) {
     flipCard(e.target, game.guess);
   }
-  if (game.guess.length === 2 && isMatch(game.guess)) {
+  if (game.guess.length === 2 && isMatch(game)) {
     game.numMatches++;
     checkStatus(game);
     game.guess = [];
@@ -77,8 +78,16 @@ function handleCardClick(e, game) {
   }
 }
 
-function isMatch(guess) {
-  return guess[0].style.backgroundColor === guess[1].style.backgroundColor;
+function isMatch(game) {
+  game.numGuesses++;
+  displayScore(game.numGuesses);
+  return (
+    game.guess[0].style.backgroundColor === game.guess[1].style.backgroundColor
+  );
+}
+
+function displayScore(score) {
+  document.getElementById("score").textContent = score;
 }
 
 function checkStatus(game) {
@@ -101,6 +110,7 @@ function startGame(cards, mSecs) {
     cardDisplayTime: mSecs,
     playStatus: "playing",
     numMatches: 0,
+    numGuesses: 0,
   };
   createCards(game);
 }
