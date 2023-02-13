@@ -99,11 +99,11 @@ function checkStatus(game) {
   }
 }
 
-function findBestScore(game) {
+function findBestScore(gameScore) {
   const bestScore = retrieve("bestScore");
-  if (game.numGuesses < bestScore) {
-    store("bestScore", game.numGuesses);
-    return game.numGuesses;
+  if (gameScore < bestScore) {
+    store("bestScore", gameScore);
+    return gameScore;
   } else if (bestScore === Infinity) {
     return "n/a";
   } else {
@@ -116,7 +116,8 @@ function endGame(score) {
   for (let card of cards) {
     document.getElementById("game").removeChild(card);
   }
-  document.getElementById("your-score").textContent = `Your score: ${score}`;
+  document.getElementById("your-score").textContent = score;
+  document.getElementById("best-score").textContent = findBestScore(score);
   document.getElementById("start-button").textContent = "Restart Game";
   document.getElementById("landing-page").style.visibility = "visible";
 }
