@@ -8,7 +8,7 @@
   color: var(--white);
 }
 
-.best-score {
+.scores {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 3rem;
   color: var(--black);
@@ -16,6 +16,7 @@
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
+
 
 #score {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
