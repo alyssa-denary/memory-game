@@ -4,7 +4,6 @@ Play a memory game
 
 ## To-Do:
 
-- For every guess made, increment a score variable and display the score while the game is played.
 - Show last game's score when finished.
 - Store the best score of a game in local storage, so that players can see a record of the best game played.
 - Refactor game into a class with methods
