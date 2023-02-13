@@ -31,7 +31,9 @@ function createCards(game) {
     const cardEl = document.createElement("section");
     cardEl.className = `${card} card`;
     cardEl.addEventListener("click", (e) => {
-      handleCardClick(e, game);
+      if (game.isListening) {
+        handleCardClick(e, game);
+      }
     });
     gameBoard.appendChild(cardEl);
   }
@@ -58,6 +60,7 @@ function unFlipCards(game) {
     card.style.backgroundColor = "";
   }
   game.guess = [];
+  game.isListening = true;
 }
 
 /** Handle clicking on a card: this could be first-card or second-card. */
@@ -68,10 +71,11 @@ function handleCardClick(e, game) {
     flipCard(e.target, game.guess);
   }
   if (game.guess.length === 2 && isMatch(game)) {
+    game.guess = [];
     game.numMatches++;
     checkStatus(game);
-    game.guess = [];
   } else if (game.guess.length === 2) {
+    game.isListening = false;
     setTimeout(unFlipCards, game.cardDisplayTime, game);
   }
 }
@@ -114,6 +118,7 @@ function startGame(cards, mSecs) {
     playStatus: "playing",
     numMatches: 0,
     numGuesses: 0,
+    isListening: true,
   };
   createCards(game);
 }
