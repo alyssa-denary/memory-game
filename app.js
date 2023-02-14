@@ -32,4 +32,12 @@ const COLORS = [
 
 document.getElementById("best-score").textContent = findBestScore();
 
-
+document.getElementById("game-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const difficulty = document.querySelector(
+    'input[name="difficulty"]:checked'
+  ).value;
+  document.getElementById("game").className = difficulty;
+  startGame(COLORS, NO_MATCH_DISPLAY_TIME, difficulty);
+  document.getElementById("landing-page").style.visibility = "hidden";
+});
