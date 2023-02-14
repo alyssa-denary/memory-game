@@ -77,8 +77,11 @@ body {
 
 .card {
   border: 0.1rem solid black;
-  width: 10rem;
+  border-radius: 0.5rem;
+  width: 12rem;
   height: 12rem;
+  background: no-repeat center url(../img/world.jpg);
+  background-size: cover;
 }
 
 #start-button {

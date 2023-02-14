@@ -6,7 +6,6 @@ Play a memory game
 
 - Instead of hard-coding colors, try something different like random colors or even images.
   --> (need at least 24 unique climate energy related items)
-  - Change backs of cards to world photo
   - adjust flip card to change image upon flip for easy level
   - research and add images up to 24 items
   - animate flip
