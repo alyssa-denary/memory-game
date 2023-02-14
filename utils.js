@@ -110,8 +110,8 @@ function shuffle(items) {
   return items;
 }
 
-function startGame(cards, ms, difficulty) {
-  let halfDeck = shuffle(cards);
+function startGame(cardBank, ms, difficulty) {
+  let halfDeck = shuffle(cardBank);
   if (difficulty === "easy") {
     halfDeck = halfDeck.slice(0, 4);
   } else if (difficulty === "medium") {
