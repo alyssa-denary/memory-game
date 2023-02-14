@@ -1,5 +1,98 @@
 "use strict";
 
+class Game {
+  constructor(deck, ms) {
+    this.deck = deck;
+    this.guess = [];
+    this.cardDisplayTime = ms;
+    this.playStatus = "playing";
+    this.numMatches = 0;
+    this.numGuesses = 0;
+    this.isListening = true;
+  }
+
+  createCards() {
+    const gameBoard = document.getElementById("game");
+    for (let card of this.deck) {
+      const cardEl = document.createElement("section");
+      cardEl.className = `${card} card`;
+      cardEl.addEventListener("click", this.handleCardClick.bind(this));
+      gameBoard.appendChild(cardEl);
+    }
+  }
+
+  handleCardClick(e) {
+    if (e.target.classList.contains("flipped") || !this.isListening) return;
+    if (this.guess.length <= 1) {
+      this.flipCard(e.target);
+    }
+    if (this.guess.length === 2 && this.isMatch()) {
+      this.guess = [];
+      this.numMatches++;
+      this.checkStatus();
+    } else if (this.guess.length === 2) {
+      this.isListening = false;
+      setTimeout(this.unFlipCards.bind(this), this.cardDisplayTime);
+    }
+  }
+
+  flipCard(card) {
+    const classArr = card.className.split(" ");
+    for (const name of classArr) {
+      if (name !== "card" && name !== "flipped") {
+        card.style.backgroundColor = name;
+      }
+    }
+    card.classList.add("flipped");
+    this.guess.push(card);
+  }
+
+  isMatch() {
+    this.numGuesses++;
+    this.displayScore();
+    return (
+      this.guess[0].style.backgroundColor ===
+      this.guess[1].style.backgroundColor
+    );
+  }
+
+  unFlipCards() {
+    for (const card of this.guess) {
+      card.classList.remove("flipped");
+      card.style.backgroundColor = "";
+    }
+    this.guess = [];
+    this.isListening = true;
+  }
+
+  displayScore() {
+    document.getElementById("current-score").textContent = this.numGuesses;
+  }
+
+  checkStatus() {
+    if (this.numMatches === this.deck.length / 2) {
+      this.playStatus = "finished";
+      this.endGame();
+    }
+  }
+
+  endGame() {
+    document.getElementById("current-score").textContent = 0;
+    const cards = document.querySelectorAll(".card");
+    for (let card of cards) {
+      document.getElementById("game").removeChild(card);
+    }
+    document.getElementById(
+      "your-score"
+    ).textContent = `Your score: ${this.numGuesses}`;
+    document.getElementById("best-score").textContent = findBestScore(
+      this.numGuesses
+    );
+    document.getElementById("start-button").textContent = "Restart Game";
+    document.getElementById("landing-page").style.visibility = "visible";
+  }
+}
+
 /** Shuffle array items in-place and return shuffled array. */
 function shuffle(items) {
   // This algorithm does a "perfect shuffle", where there won't be any
@@ -17,86 +110,10 @@ function shuffle(items) {
   return items;
 }
 
-/** Create card for every color in colors (each will appear twice)
- *
- * Each div DOM element will have:
- * - a class with the value of the color
- * - a click event listener for each card to handleCardClick
- */
-
-function createCards(game) {
-  const gameBoard = document.getElementById("game");
-
-  for (let card of game.deck) {
-    const cardEl = document.createElement("section");
-    cardEl.className = `${card} card`;
-    cardEl.addEventListener("click", (e) => {
-      if (game.isListening) {
-        handleCardClick(e, game);
-      }
-    });
-    gameBoard.appendChild(cardEl);
-  }
-}
-
-/** Flip a card face-up. */
-
-function flipCard(card, guess) {
-  const classArr = card.className.split(" ");
-  for (const name of classArr) {
-    if (name !== "card" && name !== "flipped") {
-      card.style.backgroundColor = name;
-    }
-  }
-  card.classList.add("flipped");
-  guess.push(card);
-}
-
-/** Flip a card face-down. */
-
-function unFlipCards(game) {
-  for (const card of game.guess) {
-    card.classList.remove("flipped");
-    card.style.backgroundColor = "";
-  }
-  game.guess = [];
-  game.isListening = true;
-}
-
-/** Handle clicking on a card: this could be first-card or second-card. */
-
-function handleCardClick(e, game) {
-  if (e.target.classList.contains("flipped")) return;
-  if (game.guess.length <= 1) {
-    flipCard(e.target, game.guess);
-  }
-  if (game.guess.length === 2 && isMatch(game)) {
-    game.guess = [];
-    game.numMatches++;
-    checkStatus(game);
-  } else if (game.guess.length === 2) {
-    game.isListening = false;
-    setTimeout(unFlipCards, game.cardDisplayTime, game);
-  }
-}
-
-function isMatch(game) {
-  game.numGuesses++;
-  displayScore(game.numGuesses);
-  return (
-    game.guess[0].style.backgroundColor === game.guess[1].style.backgroundColor
-  );
-}
-
-function displayScore(score) {
-  document.getElementById("current-score").textContent = score;
-}
-
-function checkStatus(game) {
-  if (game.numMatches === game.deck.length / 2) {
-    game.playStatus = "finished";
-    endGame(game.numGuesses);
-  }
+function startGame(cards, ms) {
+  const deck = shuffle(cards);
+  const game = new Game(deck, ms);
+  game.createCards();
 }
 
 function findBestScore(gameScore) {
@@ -109,32 +126,6 @@ function findBestScore(gameScore) {
   } else {
     return bestScore;
   }
-}
-
-function endGame(score) {
-  document.getElementById("current-score").textContent = 0;
-  const cards = document.querySelectorAll(".card");
-  for (let card of cards) {
-    document.getElementById("game").removeChild(card);
-  }
-  document.getElementById("your-score").textContent = `Your score: ${score}`;
-  document.getElementById("best-score").textContent = findBestScore(score);
-  document.getElementById("start-button").textContent = "Restart Game";
-  document.getElementById("landing-page").style.visibility = "visible";
-}
-
-function startGame(cards, mSecs) {
-  const deck = shuffle(cards);
-  const game = {
-    deck: deck,
-    guess: [],
-    cardDisplayTime: mSecs,
-    playStatus: "playing",
-    numMatches: 0,
-    numGuesses: 0,
-    isListening: true,
-  };
-  createCards(game);
 }
 
 function store(key, obj) {
