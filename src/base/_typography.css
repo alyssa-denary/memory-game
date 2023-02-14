@@ -10,17 +10,23 @@
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 3rem;
   color: var(--white);
+  letter-spacing: 0.25rem;
 }
 
-.scores {
+.score-heading {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 3rem;
   color: var(--black);
-  font-weight: 600;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
 
+.score-nums {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 2.5rem;
+  color: var(--darkgrey);
+  letter-spacing: 0.25rem;
+}
 
 #current-score {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
