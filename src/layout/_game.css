@@ -19,6 +19,19 @@
   grid-column: mid-start / mid-end;
 }
 
+#game-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.difficulty-buttons {
+  margin: .25rem;
+  width: 2rem;
+  height: 2rem;
+}
+
 .easy {
   grid-template-columns: [first] 1fr [mid-start] 1fr [mid-end end] 1fr;
   grid-template-rows: [first] 1fr [mid-start] 1fr [mid-end end] 1fr;
