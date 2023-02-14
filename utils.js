@@ -111,7 +111,7 @@ function shuffle(items) {
 }
 
 function startGame(cards, ms) {
-  const deck = shuffle(cards);
+  const deck = shuffle(cards.concat(cards));
   const game = new Game(deck, ms);
   game.createCards();
 }
