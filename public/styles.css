@@ -47,16 +47,24 @@ body {
   font-size: 3rem;
   color: rgb(250, 250, 250);
   color: var(--white);
+  letter-spacing: 0.25rem;
 }
 
-.scores {
+.score-heading {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 3rem;
   color: rgb(0, 0, 0);
   color: var(--black);
-  font-weight: 600;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
+}
+
+.score-nums {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 2.5rem;
+  color: rgba(47, 43, 43, 0.9);
+  color: var(--darkgrey);
+  letter-spacing: 0.25rem;
 }
 
 #current-score {
@@ -103,19 +111,6 @@ body {
   grid-column: mid-start / mid-end;
 }
 
-#game-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.difficulty-buttons {
-  margin: .25rem;
-  width: 2rem;
-  height: 2rem;
-}
-
 .easy {
   grid-template-columns: [first] 1fr [mid-start] 1fr [mid-end end] 1fr;
   grid-template-rows: [first] 1fr [mid-start] 1fr [mid-end end] 1fr;
@@ -153,6 +148,19 @@ body {
   z-index: 1;
 }
 
-.best {
-  margin-bottom: 5rem;
+.last {
+  margin-bottom: 2rem;
+}
+
+#game-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.difficulty-buttons {
+  margin: 0.25rem;
+  width: 2rem;
+  height: 2rem;
 }
