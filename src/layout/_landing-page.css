@@ -10,6 +10,19 @@
   z-index: 1;
 }
 
-.best {
-  margin-bottom: 5rem;
+.last {
+  margin-bottom: 2rem;
+}
+
+#game-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.difficulty-buttons {
+  margin: 0.25rem;
+  width: 2rem;
+  height: 2rem;
 }
