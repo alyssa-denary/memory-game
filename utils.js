@@ -110,8 +110,16 @@ function shuffle(items) {
   return items;
 }
 
-function startGame(cards, ms) {
-  const deck = shuffle(cards.concat(cards));
+function startGame(cards, ms, difficulty) {
+  let halfDeck = shuffle(cards);
+  if (difficulty === "easy") {
+    halfDeck = halfDeck.slice(0, 4);
+  } else if (difficulty === "medium") {
+    halfDeck = halfDeck.slice(0, 12);
+  } else if (difficulty === "hard") {
+    halfDeck = halfDeck.slice(0, 24);
+  }
+  const deck = shuffle(halfDeck.concat(halfDeck));
   const game = new Game(deck, ms);
   game.createCards();
 }
