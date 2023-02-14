@@ -30,6 +30,13 @@ const COLORS = [
   "indigo",
 ];
 
+const IMAGES = [
+  "img/cards/heat-pump.jpg",
+  "img/cards/nuclear.jpg",
+  "img/cards/solar.jpg",
+  "img/cards/wind.jpg",
+];
+
 document.getElementById("best-score").textContent = findBestScores();
 
 document.getElementById("game-form").addEventListener("submit", (e) => {
@@ -38,6 +45,6 @@ document.getElementById("game-form").addEventListener("submit", (e) => {
     'input[name="difficulty"]:checked'
   ).value;
   document.getElementById("game").className = difficulty;
-  startGame(COLORS, NO_MATCH_DISPLAY_TIME, difficulty);
+  startGame(IMAGES, NO_MATCH_DISPLAY_TIME, difficulty);
   document.getElementById("landing-page").style.visibility = "hidden";
 });

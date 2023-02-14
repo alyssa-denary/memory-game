@@ -41,7 +41,7 @@ class Game {
     const classArr = card.className.split(" ");
     for (const name of classArr) {
       if (name !== "card" && name !== "flipped") {
-        card.style.backgroundColor = name;
+        card.style.backgroundImage = `url(${name})`;
       }
     }
     card.classList.add("flipped");
@@ -52,15 +52,15 @@ class Game {
     this.numGuesses++;
     this.displayScore();
     return (
-      this.guess[0].style.backgroundColor ===
-      this.guess[1].style.backgroundColor
+      this.guess[0].style.backgroundImage ===
+      this.guess[1].style.backgroundImage
     );
   }
 
   unFlipCards() {
     for (const card of this.guess) {
       card.classList.remove("flipped");
-      card.style.backgroundColor = "";
+      card.style.backgroundImage = "url(img/world.jpg)";
     }
     this.guess = [];
     this.isListening = true;
