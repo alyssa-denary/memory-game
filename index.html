@@ -14,9 +14,41 @@
     <section id="landing-page">
       <p id="your-score" class="scores"></p>
       <p class="scores best">Best score: <span id="best-score"></span></p>
-      <button id="start-button">Start Game</button>
+      <form action="" id="game-form">
+        <section>
+        <label
+          ><input
+            id="easy"
+            type="radio"
+            name="difficulty"
+            value="easy"
+            class="difficulty-buttons"
+            checked
+          />easy</label
+        >
+        <label
+          ><input
+            id="medium"
+            type="radio"
+            name="difficulty"
+            value="medium"
+            class="difficulty-buttons"
+          />medium</label
+        >
+        <label
+          ><input
+            id="hard"
+            type="radio"
+            name="difficulty"
+            value="hard"
+            class="difficulty-buttons"
+          />hard</label
+        >
+      </section>
+        <button id="start-button">Start Game</button>
+      </form>
     </section>
-    <section id="game" class="easy">
+    <section id="game">
       <p id="current-score">0</p>
     </section>
   </body>
