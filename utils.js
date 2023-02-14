@@ -1,8 +1,9 @@
 "use strict";
 
 class Game {
-  constructor(deck, ms) {
+  constructor(deck, difficulty, ms) {
     this.deck = deck;
+    this.difficulty = difficulty;
     this.guess = [];
     this.cardDisplayTime = ms;
     this.playStatus = "playing";
@@ -82,12 +83,11 @@ class Game {
     for (let card of cards) {
       document.getElementById("game").removeChild(card);
     }
+    document.getElementById("your-score-text").textContent = "Your score: ";
     document.getElementById(
-      "your-score"
-    ).textContent = `Your score: ${this.numGuesses}`;
-    document.getElementById("best-score").textContent = findBestScore(
-      this.numGuesses
-    );
+      "last-score"
+    ).textContent = `${this.difficulty}: ${this.numGuesses}`;
+    document.getElementById("best-score").textContent = findBestScores(this);
     document.getElementById("start-button").textContent = "Restart Game";
     document.getElementById("landing-page").style.visibility = "visible";
   }
@@ -120,20 +120,29 @@ function startGame(cardBank, ms, difficulty) {
     halfDeck = halfDeck.slice(0, 24);
   }
   const deck = shuffle(halfDeck.concat(halfDeck));
-  const game = new Game(deck, ms);
+  const game = new Game(deck, difficulty, ms);
   game.createCards();
 }
 
-function findBestScore(gameScore) {
-  const bestScore = retrieve("bestScore");
-  if (gameScore < bestScore) {
-    store("bestScore", gameScore);
-    return gameScore;
-  } else if (bestScore === Infinity) {
-    return "n/a";
-  } else {
-    return bestScore;
+function findBestScores(game) {
+  const bestScores = retrieve("bestScores");
+  if (
+    game &&
+    (bestScores[game.difficulty] === null ||
+      game.numGuesses < bestScores[game.difficulty])
+  ) {
+    bestScores[game.difficulty] = game.numGuesses;
+    store("bestScores", bestScores);
   }
+  const bestScoresArr = [];
+  for (const key in bestScores) {
+    if (bestScores[key] !== null) {
+      bestScoresArr.push(`${key}: ${bestScores[key]}`);
+    } else {
+      bestScoresArr.push(`${key}: n/a`);
+    }
+  }
+  return bestScoresArr.join(" - ");
 }
 
 function store(key, obj) {
@@ -142,5 +151,7 @@ function store(key, obj) {
 
 function retrieve(key) {
   const objJSON = localStorage.getItem(`${key}`);
-  return objJSON !== null ? JSON.parse(objJSON) : Infinity;
+  return objJSON !== null
+    ? JSON.parse(objJSON)
+    : { easy: null, medium: null, hard: null };
 }
