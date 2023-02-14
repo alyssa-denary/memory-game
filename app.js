@@ -30,7 +30,7 @@ const COLORS = [
   "indigo",
 ];
 
-document.getElementById("best-score").textContent = findBestScore();
+document.getElementById("best-score").textContent = findBestScores();
 
 document.getElementById("game-form").addEventListener("submit", (e) => {
   e.preventDefault();
