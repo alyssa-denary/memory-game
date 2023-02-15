@@ -37,8 +37,14 @@ body {
   background-size: cover;
 }
 
-.heading {
-  font-size: 3.5rem;
+.heading h1 {
+  font-size: 4rem;
+}
+
+.heading h3 {
+  font-size: 2.25rem;
+  color: rgba(47, 43, 43, 0.9);
+  color: var(--darkgrey);
 }
 
 #game-form {
@@ -136,6 +142,7 @@ body {
 
 .heading {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
