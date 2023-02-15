@@ -2,7 +2,7 @@
   width: 100%;
   padding: 2rem;
   display: grid;
-  gap: 4rem;
+  gap: 2rem;
   justify-content: center;
   align-content: center;
   justify-items: center;
@@ -13,23 +13,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
-  height: 12rem;
+  width: 100%;
+  height: 100%;
   grid-row: mid-start / mid-end;
   grid-column: mid-start / mid-end;
 }
 
 .easy {
-  grid-template-columns: [first] 1fr [mid-start] 1fr [mid-end end] 1fr;
-  grid-template-rows: [first] 1fr [mid-start] 1fr [mid-end end] 1fr;
+  grid-template-columns: [first] 14rem [mid-start] 14rem [mid-end end] 14rem;
+  grid-template-rows: [first] 14rem [mid-start] 14rem [mid-end end] 14rem;
 }
 
 .medium {
-  grid-template-columns: [first] 1fr [second] 1fr [mid-start] 1fr [mid-end] 1fr [end] 1fr;
-  grid-template-rows: [first] 1fr [second] 1fr [mid-start] 1fr [mid-end] 1fr [end] 1fr;
+  grid-template-columns: [first] 13rem [second] 13rem [mid-start] 13rem [mid-end] 13rem [end] 13rem;
+  grid-template-rows: [first] 13rem [second] 13rem [mid-start] 13rem [mid-end] 13rem [end] 13rem;
 }
 
 .hard {
-  grid-template-columns: [first] 1fr [second] 1fr [third] 1fr[mid-start] 1fr [mid-end] 1fr [second-last] 1fr [end] 1fr;
-  grid-template-rows: [first] 1fr [second] 1fr [third] 1fr[mid-start] 1fr [mid-end] 1fr [second-last] 1fr [end] 1fr;
+  grid-template-columns: [first] 13rem [second] 13rem [third] 13rem [fourth] 13rem [mid-start] 13rem [mid-end] 13rem [third-last] 13rem [second-last] 13rem [end] 13rem;
+  grid-template-rows: [first] 13rem [second] 13rem [mid-start] 13rem [mid-end] 13rem [end] 13rem;
 }
