@@ -83,6 +83,7 @@ class Game {
     for (let card of cards) {
       document.getElementById("game").removeChild(card);
     }
+    document.getElementById("current-score").textContent = "";
     document.getElementById("your-score-text").textContent = "Your score: ";
     document.getElementById(
       "last-score"
@@ -117,11 +118,12 @@ function startGame(cardBank, ms, difficulty) {
   } else if (difficulty === "medium") {
     halfDeck = halfDeck.slice(0, 12);
   } else if (difficulty === "hard") {
-    halfDeck = halfDeck.slice(0, 24);
+    halfDeck = halfDeck.slice(0, 22);
   }
   const deck = shuffle(halfDeck.concat(halfDeck));
   const game = new Game(deck, difficulty, ms);
   game.createCards();
+  document.getElementById("current-score").textContent = 0;
 }
 
 function findBestScores(game) {
