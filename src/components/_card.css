@@ -7,4 +7,5 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  box-shadow: 3px 3px 4px var(--darkgreen);
 }

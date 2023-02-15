@@ -93,6 +93,8 @@ html,
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  box-shadow: 3px 3px 4px rgb(21, 42, 4);
+  box-shadow: 3px 3px 4px var(--darkgreen);
 }
 #start-button {
   background-color: rgb(135, 206, 235);
