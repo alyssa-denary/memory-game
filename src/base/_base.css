@@ -14,4 +14,7 @@ body {
   box-sizing: border-box;
   min-height: 100vh;
   position: relative;
+  background-image: url(../img/clouds.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
