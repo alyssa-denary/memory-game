@@ -1,41 +1,45 @@
+html,
+.heading {
+  font-family: "milky_coffeeregular", fantasy;
+}
+
 .heading h1 {
   font-size: 4rem;
+  color: var(--darkgreen);
 }
 
 .heading h3 {
   font-size: 2.25rem;
-  color: var(--darkgrey);
+  color: var(--greygreen);
 }
 
 #game-form {
   font-size: 2.75rem;
+  color: var(--darkgreen);
 }
 
 #start-button {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "milky_coffeeregular", fantasy;
   font-size: 3rem;
   color: var(--darkgreen);
   letter-spacing: 0.25rem;
 }
 
 .score-heading {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 3rem;
-  color: var(--black);
+  color: var(--darkgreen);
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
 
 .score-nums {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 2.5rem;
-  color: var(--darkgrey);
+  color: var(--greygreen);
   letter-spacing: 0.25rem;
 }
 
 #current-score {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 6rem;
-  color: var(--black);
+  color: var(--darkgreen);
   font-weight: 600;
 }
