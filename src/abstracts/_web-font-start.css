@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "milky_coffeeregular";
+  src: url("../fonts/milky_coffee-webfont.woff2") format("woff2"),
+    url("../fonts/milky_coffee-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
