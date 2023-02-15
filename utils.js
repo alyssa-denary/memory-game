@@ -41,10 +41,12 @@ class Game {
     const classArr = card.className.split(" ");
     for (const name of classArr) {
       if (name !== "card" && name !== "flipped") {
-        card.style.backgroundImage = `url(${name})`;
+        card.classList.add("flipped");
+        setTimeout(() => {
+          card.style.backgroundImage = `url(${name})`;
+        }, 600);
       }
     }
-    card.classList.add("flipped");
     this.guess.push(card);
   }
 
@@ -60,7 +62,9 @@ class Game {
   unFlipCards() {
     for (const card of this.guess) {
       card.classList.remove("flipped");
-      card.style.backgroundImage = "url(img/world.jpg)";
+      setTimeout(() => {
+        card.style.backgroundImage = "url('https://media3.giphy.com/media/l1KVcrdl7rJpFnY2s/200.webp?cid=ecf05e47kazb49i49osx6x8plekhqp5xc4yue3mpw8kab5ec&rid=200.webp&ct=g')";
+      }, 600);
     }
     this.guess = [];
     this.isListening = true;
