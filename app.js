@@ -31,9 +31,9 @@ const COLORS = [
 ];
 
 const IMAGES = [
+  "img/cards/air-capture.jpg",
   "img/cards/avoiding-deforestation.jpg",
   "img/cards/bioenergy.jpg",
-  "img/cards/carbon-capture.png",
   "img/cards/cover-crop.jpg",
   "img/cards/forest-management.jpg",
   "img/cards/geothermal.jpg",
