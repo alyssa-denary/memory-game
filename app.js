@@ -31,9 +31,29 @@ const COLORS = [
 ];
 
 const IMAGES = [
+  "img/cards/avoiding-deforestation.jpg",
+  "img/cards/bioenergy.jpg",
+  "img/cards/carbon-capture.png",
+  "img/cards/cover-crop.jpg",
+  "img/cards/environmental-justice.jpg",
+  "img/cards/forest-management.jpg",
+  "img/cards/geothermal.jpg",
   "img/cards/heat-pump.jpg",
+  "img/cards/hydropower.jpg",
+  "img/cards/limestone.png",
+  "img/cards/marine-life.jpg",
+  "img/cards/marsh.jpg",
+  "img/cards/mineralizing-ocean.png",
+  "img/cards/no-till-soil.jpg",
   "img/cards/nuclear.jpg",
+  "img/cards/offshore-wind.jpg",
+  "img/cards/peatland-restoration.jpg",
+  "img/cards/reforestation.jpg",
+  "img/cards/restoring-mangroves.jpg",
+  "img/cards/seagrass.jpg",
+  "img/cards/seaweed-farming.jpg",
   "img/cards/solar.jpg",
+  "img/cards/tidal-energy.jpg",
   "img/cards/wind.jpg",
 ];
 
