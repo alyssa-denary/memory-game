@@ -1,5 +1,6 @@
 #start-button {
   background-color: var(--blue);
   padding: 2rem 4rem;
-  border: 0.1rem solid var(--black);
+  border: 0.1rem solid var(--blue);
+  border-radius: 1rem;
 }

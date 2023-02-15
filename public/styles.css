@@ -99,8 +99,9 @@ body {
   background-color: rgb(135, 206, 235);
   background-color: var(--blue);
   padding: 2rem 4rem;
-  border: 0.1rem solid rgb(0, 0, 0);
-  border: 0.1rem solid var(--black);
+  border: 0.1rem solid rgb(135, 206, 235);
+  border: 0.1rem solid var(--blue);
+  border-radius: 1rem;
 }
 
 #game {
