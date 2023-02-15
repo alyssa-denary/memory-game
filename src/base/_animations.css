@@ -1,9 +1,9 @@
 #start-button:hover {
   transform: translateY(-0.5rem);
-  box-shadow: 0px 3px 4px var(--darkgrey);
+  box-shadow: 0px 3px 4px var(--darkgreen);
 }
 
 #start-button:active {
   transform: translateY(0rem);
   box-shadow: none;
-} 
+}
