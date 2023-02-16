@@ -1,12 +1,14 @@
 #game {
   width: 100%;
-  padding: 2rem;
+  padding: 5rem;
   display: grid;
   gap: 2rem;
   justify-content: center;
   align-content: center;
   justify-items: center;
   align-items: center;
+  background-color: var(--transparent-white);
+  backdrop-filter: blur(1rem);
 }
 
 #current-score {
