@@ -12,12 +12,19 @@ class Game {
   }
 
   createCards() {
-    const gameBoard = document.getElementById("game");
+    const game = document.createElement("section");
+    game.id = "game";
+    game.className = this.difficulty;
+    document.getElementById("board").appendChild(game);
+    const score = document.createElement("p");
+    score.id = "current-score";
+    score.textContent = 0;
+    game.appendChild(score);
     for (const url of this.deck) {
       const cardEl = document.createElement("section");
       cardEl.className = `card`;
       cardEl.addEventListener("click", this.handleCardClick.bind(this));
-      gameBoard.appendChild(cardEl);
+      game.appendChild(cardEl);
       const imgEl = document.createElement("img");
       imgEl.className = `img`;
       imgEl.src = url;
@@ -76,11 +83,9 @@ class Game {
   }
 
   endGame() {
-    document.getElementById("current-score").textContent = "";
-    const cards = document.querySelectorAll(".card");
-    for (let card of cards) {
-      document.getElementById("game").removeChild(card);
-    }
+    document
+      .getElementById("board")
+      .removeChild(document.getElementById("game"));
     document.getElementById("your-score-text").textContent = "Your score: ";
     document.getElementById(
       "last-score"
@@ -119,7 +124,6 @@ function startGame(cardBank, ms, difficulty) {
   const deck = shuffle(halfDeck.concat(halfDeck));
   const game = new Game(deck, difficulty, ms);
   game.createCards();
-  document.getElementById("current-score").textContent = 0;
 }
 
 function findBestScores(game) {
