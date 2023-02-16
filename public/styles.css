@@ -7,6 +7,7 @@
 }
 :root {
   --white: #fefdff;
+  --transparent-white: rgba(250, 250, 250, 0.25);
   --blue: #213159;
   --black: rgb(0, 0, 0);
   --greygreen: #4b493f;
@@ -124,7 +125,7 @@ html,
 }
 #game {
   width: 100%;
-  padding: 2rem;
+  padding: 5rem;
   display: grid;
   grid-gap: 2rem;
   gap: 2rem;
@@ -132,6 +133,10 @@ html,
   align-content: center;
   justify-items: center;
   align-items: center;
+  background-color: rgba(250, 250, 250, 0.25);
+  background-color: var(--transparent-white);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
 }
 #current-score {
   display: flex;
