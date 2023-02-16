@@ -190,8 +190,8 @@ html,
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  accent-color: #213159;
-  accent-color: var(--blue);
+  accent-color: #91cf5a;
+  accent-color: var(--green);
 }
 .difficulty-buttons {
   margin: 0.25rem;
