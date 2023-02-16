@@ -15,10 +15,15 @@ class Game {
   createCards() {
     const gameBoard = document.getElementById("game");
     for (let card of this.deck) {
-      const cardEl = document.createElement("section");
+      const cardContainer = document.createElement("section");
+      cardContainer.className = `${card} card-container `;
+      cardContainer.style.zIndex = 1;
+      cardContainer.addEventListener("click", this.handleCardClick.bind(this));
+      gameBoard.appendChild(cardContainer);
+      const cardEl = document.createElement("img");
       cardEl.className = `${card} card`;
-      cardEl.addEventListener("click", this.handleCardClick.bind(this));
-      gameBoard.appendChild(cardEl);
+      cardEl.src = card;
+      cardContainer.appendChild(cardEl);
     }
   }
 
@@ -38,33 +43,25 @@ class Game {
   }
 
   flipCard(card) {
-    const classArr = card.className.split(" ");
-    for (const name of classArr) {
-      if (name !== "card" && name !== "flipped") {
-        card.classList.add("flipped");
-        setTimeout(() => {
-          card.style.backgroundImage = `url(${name})`;
-        }, 600);
-      }
-    }
     this.guess.push(card);
+    card.classList.add("flipped");
+    setTimeout(() => {
+      card.firstChild.style.display = "flex";
+    }, 250);
   }
 
   isMatch() {
     this.numGuesses++;
     this.displayScore();
-    return (
-      this.guess[0].style.backgroundImage ===
-      this.guess[1].style.backgroundImage
-    );
+    return this.guess[0].firstChild.src === this.guess[1].firstChild.src;
   }
 
   unFlipCards() {
     for (const card of this.guess) {
       card.classList.remove("flipped");
       setTimeout(() => {
-        card.style.backgroundImage = "url('https://media3.giphy.com/media/l1KVcrdl7rJpFnY2s/200.webp?cid=ecf05e47kazb49i49osx6x8plekhqp5xc4yue3mpw8kab5ec&rid=200.webp&ct=g')";
-      }, 600);
+        card.firstChild.style.display = "none";
+      }, 250);
     }
     this.guess = [];
     this.isListening = true;
