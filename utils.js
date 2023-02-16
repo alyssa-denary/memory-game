@@ -18,10 +18,10 @@ class Game {
       cardContainer.className = `card-container`;
       cardContainer.addEventListener("click", this.handleCardClick.bind(this));
       gameBoard.appendChild(cardContainer);
-      const cardEl = document.createElement("img");
-      cardEl.className = `card`;
-      cardEl.src = card;
-      cardContainer.appendChild(cardEl);
+      const imgEl = document.createElement("img");
+      imgEl.className = `img`;
+      imgEl.src = card;
+      cardContainer.appendChild(imgEl);
     }
   }
 
