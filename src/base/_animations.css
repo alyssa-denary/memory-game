@@ -8,12 +8,12 @@
   box-shadow: none;
 }
 
-.card-container {
+.card {
   transition: transform 0.75s;
   transform: rotateY(-180deg);
   transform-style: preserve-3d;
 }
 
-.card-container.flipped {
+.card.flipped {
   transform: rotateY(0deg);
 }

@@ -13,15 +13,15 @@ class Game {
 
   createCards() {
     const gameBoard = document.getElementById("game");
-    for (const card of this.deck) {
-      const cardContainer = document.createElement("section");
-      cardContainer.className = `card-container`;
-      cardContainer.addEventListener("click", this.handleCardClick.bind(this));
-      gameBoard.appendChild(cardContainer);
+    for (const url of this.deck) {
+      const cardEl = document.createElement("section");
+      cardEl.className = `card`;
+      cardEl.addEventListener("click", this.handleCardClick.bind(this));
+      gameBoard.appendChild(cardEl);
       const imgEl = document.createElement("img");
       imgEl.className = `img`;
-      imgEl.src = card;
-      cardContainer.appendChild(imgEl);
+      imgEl.src = url;
+      cardEl.appendChild(imgEl);
     }
   }
 
@@ -77,7 +77,7 @@ class Game {
 
   endGame() {
     document.getElementById("current-score").textContent = 0;
-    const cards = document.querySelectorAll(".card-container");
+    const cards = document.querySelectorAll(".card");
     for (let card of cards) {
       document.getElementById("game").removeChild(card);
     }
