@@ -76,12 +76,11 @@ class Game {
   }
 
   endGame() {
-    document.getElementById("current-score").textContent = 0;
+    document.getElementById("current-score").textContent = "";
     const cards = document.querySelectorAll(".card");
     for (let card of cards) {
       document.getElementById("game").removeChild(card);
     }
-    document.getElementById("current-score").textContent = "";
     document.getElementById("your-score-text").textContent = "Your score: ";
     document.getElementById(
       "last-score"
@@ -105,7 +104,6 @@ function shuffle(items) {
     // swap item at i <-> item at j
     [items[i], items[j]] = [items[j], items[i]];
   }
-
   return items;
 }
 
