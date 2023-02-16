@@ -6,16 +6,17 @@
   font-style: normal;
 }
 :root {
-  --white: rgb(250, 250, 250);
-  --blue: rgb(135, 206, 235);
+  --white: #fefdff;
+  --blue: #213159;
   --black: rgb(0, 0, 0);
-  --greygreen: rgba(40, 60, 43, 0.9);
+  --greygreen: #4b493f;
   --darkgreen: rgb(21, 42, 4);
+  --green: #91cf5a;
 }
 #start-button:hover {
   transform: translateY(-0.5rem);
-  box-shadow: 0px 0.3rem 0.4rem rgb(21, 42, 4);
-  box-shadow: 0px 0.3rem 0.4rem var(--darkgreen);
+  box-shadow: 0 0.3rem 0.4rem rgb(21, 42, 4);
+  box-shadow: 0 0.3rem 0.4rem var(--darkgreen);
 }
 #start-button:active {
   transform: translateY(0);
@@ -53,43 +54,43 @@ html,
 }
 .heading h1 {
   font-size: 8rem;
-  color: rgb(21, 42, 4);
-  color: var(--darkgreen);
+  color: #213159;
+  color: var(--blue);
 }
 .heading h3 {
   font-size: 3rem;
-  color: rgba(40, 60, 43, 0.9);
+  color: #4b493f;
   color: var(--greygreen);
 }
 #game-form {
   font-size: 2.75rem;
-  color: rgb(21, 42, 4);
-  color: var(--darkgreen);
+  color: #213159;
+  color: var(--blue);
 }
 #start-button {
   font-family: "milky_coffeeregular", fantasy;
   font-size: 4rem;
-  color: rgb(21, 42, 4);
-  color: var(--darkgreen);
+  color: #91cf5a;
+  color: var(--green);
   letter-spacing: 0.25rem;
 }
 .score-heading {
   font-size: 3.9rem;
-  color: rgb(21, 42, 4);
-  color: var(--darkgreen);
+  color: #213159;
+  color: var(--blue);
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
 .score-nums {
   font-size: 3rem;
-  color: rgba(40, 60, 43, 0.9);
+  color: #4b493f;
   color: var(--greygreen);
   letter-spacing: 0.25rem;
 }
 #current-score {
   font-size: 6rem;
-  color: rgb(21, 42, 4);
-  color: var(--darkgreen);
+  color: #213159;
+  color: var(--blue);
   font-weight: 600;
 }
 .card {
@@ -101,14 +102,14 @@ html,
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: -0.3rem 0.3rem 0.4rem rgb(21, 42, 4);
-  box-shadow: -0.3rem 0.3rem 0.4rem var(--darkgreen);
+  box-shadow: -0.3rem 0.3rem 0.5rem rgb(21, 42, 4);
+  box-shadow: -0.3rem 0.3rem 0.5rem var(--darkgreen);
 }
 #start-button {
-  background-color: rgb(135, 206, 235);
+  background-color: #213159;
   background-color: var(--blue);
   padding: 2rem 4rem;
-  border: 0.1rem solid rgb(135, 206, 235);
+  border: 0.1rem solid #213159;
   border: 0.1rem solid var(--blue);
   border-radius: 1rem;
 }
@@ -149,15 +150,14 @@ html,
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 5rem 0;
 }
 #landing-page {
-  height: 90vh;
-  width: 100vw;
-  margin-top: -8rem;
+  width: 100%;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: absolute;
   z-index: 1;
