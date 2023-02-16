@@ -5,7 +5,7 @@ html,
 
 .heading h1 {
   font-size: 8rem;
-  color: var(--darkgreen);
+  color: var(--blue);
 }
 
 .heading h3 {
@@ -15,19 +15,19 @@ html,
 
 #game-form {
   font-size: 2.75rem;
-  color: var(--darkgreen);
+  color: var(--blue);
 }
 
 #start-button {
   font-family: "milky_coffeeregular", fantasy;
   font-size: 4rem;
-  color: var(--darkgreen);
+  color: var(--green);
   letter-spacing: 0.25rem;
 }
 
 .score-heading {
   font-size: 3.9rem;
-  color: var(--darkgreen);
+  color: var(--blue);
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
@@ -40,6 +40,6 @@ html,
 
 #current-score {
   font-size: 6rem;
-  color: var(--darkgreen);
+  color: var(--blue);
   font-weight: 600;
 }
