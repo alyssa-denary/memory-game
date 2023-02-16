@@ -2,7 +2,7 @@
 
 /** Memory game: find matching pairs of cards and flip both of them. */
 
-const NO_MATCH_DISPLAY_TIME = 1400;
+const NO_MATCH_DISPLAY_TIME = 1250;
 
 const IMAGES = [
   "img/cards/air-capture.jpg",
