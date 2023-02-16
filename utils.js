@@ -80,7 +80,7 @@ class Game {
 
   endGame() {
     document.getElementById("current-score").textContent = 0;
-    const cards = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll(".card-container");
     for (let card of cards) {
       document.getElementById("game").removeChild(card);
     }
