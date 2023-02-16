@@ -13,14 +13,13 @@ class Game {
 
   createCards() {
     const gameBoard = document.getElementById("game");
-    for (let card of this.deck) {
+    for (const card of this.deck) {
       const cardContainer = document.createElement("section");
-      cardContainer.className = `${card} card-container `;
-      cardContainer.style.zIndex = 1;
+      cardContainer.className = `card-container`;
       cardContainer.addEventListener("click", this.handleCardClick.bind(this));
       gameBoard.appendChild(cardContainer);
       const cardEl = document.createElement("img");
-      cardEl.className = `${card} card`;
+      cardEl.className = `card`;
       cardEl.src = card;
       cardContainer.appendChild(cardEl);
     }
