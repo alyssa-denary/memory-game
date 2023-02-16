@@ -6,7 +6,6 @@ class Game {
     this.difficulty = difficulty;
     this.guess = [];
     this.cardDisplayTime = ms;
-    this.playStatus = "playing";
     this.numMatches = 0;
     this.numGuesses = 0;
     this.isListening = true;
@@ -73,7 +72,6 @@ class Game {
 
   checkStatus() {
     if (this.numMatches === this.deck.length / 2) {
-      this.playStatus = "finished";
       this.endGame();
     }
   }
