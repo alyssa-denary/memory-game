@@ -123,8 +123,14 @@ html,
   border: 0.1rem solid var(--blue);
   border-radius: 1rem;
 }
-#game {
+#board {
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#game {
+  min-width: -moz-min-content;
+  min-width: min-content;
   padding: 5rem;
   display: grid;
   grid-gap: 2rem;
@@ -137,6 +143,7 @@ html,
   background-color: var(--transparent-white);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
+  border-radius: 1rem;
 }
 #current-score {
   display: flex;

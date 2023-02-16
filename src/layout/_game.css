@@ -1,5 +1,11 @@
-#game {
+#board {
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#game {
+  min-width: min-content;
   padding: 5rem;
   display: grid;
   gap: 2rem;
@@ -9,6 +15,7 @@
   align-items: center;
   background-color: var(--transparent-white);
   backdrop-filter: blur(1rem);
+  border-radius: 1rem;
 }
 
 #current-score {
